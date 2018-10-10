@@ -1,0 +1,12 @@
+header{
+  text-align: center;
+  div{
+    background-color: $main-color;
+    padding: 20px 0;
+    color: #ffffff;
+    margin-bottom: $vert-padd-desk*2;
+    h2{
+      color: $lighter-main-color;
+    }
+  }
+}

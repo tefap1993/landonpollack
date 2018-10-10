@@ -1,0 +1,6 @@
+$main-desktop-breakpoint: 'all and (min-width: 1024px)';
+$main-mobile-breakpoint: 'all and (max-width: 1023px)';
+$small-mobile-breakpoint: 'all and (max-width: 600px)';
+$diminute-mobile-breakpoint: 'all and (max-width: 365px)';
+$big-mobile-breakpoint: 'all and (max-width: 1023px) and (min-width: 601px)';
+$from-big-mobile-breakpoint: 'all and (min-width: 601px)';

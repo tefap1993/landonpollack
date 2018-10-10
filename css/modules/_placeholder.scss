@@ -1,0 +1,13 @@
+%flexbox {
+  @include flexbox;
+}
+
+%control-container {
+  >div {
+    @media #{$main-desktop-breakpoint} {
+      padding: $vert-padd-desk $hor-padd-desk;
+      max-width: $max-width;
+      margin: 0 auto;
+    }
+  }
+}

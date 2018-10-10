@@ -1,0 +1,459 @@
+section {
+  @extend %control-container;
+}
+
+.flex {
+  @extend %flexbox;
+}
+
+.justify-cont-cent {
+  @include justify-content(center);
+}
+
+.direction-column {
+  @include flex-direction(column);
+}
+
+.wrap {
+  @include flex-wrap(wrap);
+}
+
+.center {
+  text-align: center;
+}
+
+.landon-resume,
+.two-cols,
+.three-cols {
+  @extend %flexbox;
+  @include flex-wrap(wrap);
+}
+
+.landon-resume {
+  @media #{$from-big-mobile-breakpoint} {
+    >div:first-child {
+      @include flex(1 0 60%);
+      width: 60%;
+    }
+    >div:last-child {
+      @include flex(1 0 35%);
+      width: 35%;
+    }
+  }
+}
+
+.two-cols {
+  @media #{$from-big-mobile-breakpoint} {
+    >div {
+      @include flex(1 0 45%);
+      width: 45%;
+    }
+  }
+}
+
+.three-cols {
+  @media #{$from-big-mobile-breakpoint} {
+    >div {
+      @include flex(1 0 30%);
+      width: 30%;
+    }
+  }
+}
+
+.separator {
+  color: #ffffff;
+  background-color: $main-color;
+  padding: 20px;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.operation {
+  &:first-of-type {
+    padding-top: 20px;
+  }
+  @extend %flexbox;
+  .enterprise {
+    margin-right: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    min-width: 100px;
+    max-width: 100px;
+    @media #{$from-big-mobile-breakpoint} {
+      &::after,
+      &::before {
+        background-color: #ffffff;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 40px;
+      }
+      &::after {
+        bottom: -40px;
+      }
+    }
+  }
+  p {
+    min-width: 200px;
+    margin: 20px 0;
+  }
+  @media #{$small-mobile-breakpoint} {
+    @include flex-wrap(wrap);
+    .enterprise {
+      width: 100%;
+      max-width: unset;
+      text-align: center;
+      margin-right: 0;
+      img {
+        height: 100px;
+      }
+    }
+  }
+}
+
+.table {
+  padding: 20px 0 50px;
+  text-align: center;
+  color: #ffffff;
+  p {
+    padding: 10px;
+    background-color: $light-main-color;
+    &:nth-child(odd) {
+      background-color: $main-color;
+    }
+  }
+}
+
+.related-enterprises {
+  margin-bottom: 20px;
+  h4 {
+    margin-bottom: 20px;
+  }
+}
+
+.graphic {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+}
+
+.circle {
+  border-radius: 50%;
+  width: calc(100% - 40px);
+  padding-bottom: calc(100% - 40px);
+  margin: 20px;
+  &.blue {
+    background-color: $blue-color;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+  &.green {
+    background-color: $green-color;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+  &.red {
+    background-color: $red-color;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 3;
+  }
+  &.yellow {
+    background-color: $yellow-color;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 4;
+    grid-row-end: 4;
+  }
+}
+
+.graphic .title,
+.circle .list-container {
+  position: absolute;
+  opacity: 1;
+  z-index: 2;
+}
+
+.circle .list-container {
+  left: 20%;
+  top: 20%;
+  max-width: 80%;
+  @include font-legibility($font-small-size);
+}
+
+#titleCircleBlue {
+  transform: rotate(-49deg);
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  top: 10%;
+  left: 17%;
+}
+
+#titleCircleGreen {
+  transform: rotate(41deg);
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  right: 15%;
+  top: 10%;
+}
+
+#titleCircleRed {
+  transform: rotate(40deg);
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  left: 21%;
+  bottom: 8%;
+}
+
+#titleCircleYellow {
+  transform: rotate(-44deg);
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  bottom: 12%;
+  right: 15%;
+}
+
+@media #{$main-desktop-breakpoint} {
+  .graphic {
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-rows: 50%;
+  }
+  #titleCircleBlue {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    top: 2%;
+    left: 29%;
+  }
+  #titleCircleGreen {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+  #titleCircleRed {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    left: 26%;
+    bottom: 1%;
+  }
+  #titleCircleYellow {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    bottom: 6%;
+    right: 16%;
+  }
+  .circle {
+    margin: 0;
+    width: 120%;
+    padding-bottom: 120%;
+    &.blue {
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 1;
+      grid-row-end: 1;
+      margin-bottom: -30%;
+    }
+    &.green {
+      grid-column-start: 2;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 1;
+      margin-bottom: -30%;
+      left: -10%;
+    }
+    &.red {
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 2;
+      grid-row-end: 2;
+    }
+    &.yellow {
+      grid-column-start: 2;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 2;
+      left: -10%;
+    }
+  }
+  .circle .list-container {
+    left: 15%;
+  }
+  .circle.red,
+  .circle.yellow {
+    .list-container {
+      bottom: 15%;
+      top: initial;
+    }
+  }
+  .circle.blue,
+  .circle.green {
+    .list-container {
+      top: 15%;
+    }
+  }
+}
+
+@media #{$small-mobile-breakpoint} {
+  .circle {
+    margin: 10px;
+    width: calc(100% - 20px);
+    padding-bottom: calc(100% - 20px);
+    .list-container {
+      left: 15%;
+      top: 15%;
+    }
+  }
+}
+
+.timeline {
+  @extend %flexbox;
+  padding: 10px 0;
+  &:nth-child(odd) .year {
+    background-color: $light-main-color;
+  }
+  &:nth-child(even) .year {
+    background-color: $main-color;
+  }
+  .year-group {
+    margin-top: -20px;
+    @extend %flexbox; // @include justify-content(space-around);
+    @include align-items(center);
+    .year {
+      @include flex(1);
+      @extend %flexbox;
+      @include font-legibility($font-big-size);
+      font-family: $highlight-font;
+      @include align-items(center);
+      @include justify-content(center);
+      color: #ffffff;
+      border-bottom: 2px solid #ffffff;
+      &.bottom,
+      &.top {
+        padding: 0;
+        max-height: 30px;
+        ;
+      }
+      &.bottom {
+        border-radius: 0 0 20px 20px;
+        border-bottom: 0;
+      }
+      &.top {
+        border-radius: 20px 20px 0 0;
+      }
+    }
+  }
+  @media #{$from-big-mobile-breakpoint} {
+    @include justify-content(space-around);
+    .year-group {
+      margin-top: 20px;
+      margin-bottom: -40px;
+    }
+    &:nth-child(2) {
+      .year-group {
+        margin-top: -20px;
+      }
+    }
+    >div:nth-child(odd) {
+      @include flex(1 1 40%);
+      width: 40%;
+    }
+    >div:nth-child(even) {
+      @include flex(1 1 15%);
+      width: 15%;
+    }
+    .year-group {
+      @include flex-direction(column);
+      padding: 0 20px;
+      .year {
+        width: 100%;
+      }
+    }
+    .clean-card h4 {
+      display: none;
+    }
+  }
+  @media #{$main-desktop-breakpoint} {
+    .year-group {
+      padding: 0 60px;
+    }
+    .consulting,
+    .investing {
+      &::after,
+      &::before {
+        display: block;
+        border-color: #ffffff;
+        border-width: 2px;
+        content: '';
+        position: absolute
+      }
+      &:after {
+        height: calc(100% + 8px);
+        width: 30px;
+        top: -4px;
+        border-bottom-style: solid;
+        border-top-style: solid;
+      }
+      &::before {
+        border-top-style: solid;
+        top: calc(50% - 1px);
+        width: 30px;
+        height: 1px;
+      }
+    }
+    .consulting::after {
+      border-radius: 20px 0 0 20px;
+      right: -60px;
+      border-left-style: solid;
+    }
+    .consulting::before {
+      right: -30px;
+    }
+    .investing::after {
+      border-radius: 0 20px 20px 0;
+      left: -60px;
+      border-right-style: solid;
+    }
+    .investing::before {
+      left: -30px;
+    }
+  }
+  @media #{$small-mobile-breakpoint} {
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    .clean-card {
+      margin: 20px 0;
+    }
+    .year-group {
+      @include order(-1);
+      width: 100%;
+      .year.top,
+      .year.bottom {
+        display: none;
+      }
+    }
+  }
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+}

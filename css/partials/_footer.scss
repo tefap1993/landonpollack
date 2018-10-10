@@ -1,0 +1,12 @@
+footer {
+  background-color: $main-color;
+  @extend %flexbox;
+  @include justify-content(center);
+  padding: 20px;
+  a {
+    margin: 0px 10px;
+  }
+  img{
+    height: 30px;
+  }
+}

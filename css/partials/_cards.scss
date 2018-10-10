@@ -1,0 +1,30 @@
+.card {
+  background-color: $lighter-main-color;
+  padding: $card-padd;
+  margin: 20px;
+  h4 {
+    color: $main-color;
+  }
+  &.connected::after {
+    content: '';
+    background-color: inherit;
+    display: block;
+    position: absolute;
+    z-index: 0;
+    width: 30px;
+    height: 40px;
+    bottom: -40px;
+    left: calc(50% - 15px);
+  }
+}
+
+.dark-card {
+  @extend .card;
+  background-color: $main-color;
+}
+
+.clean-card {
+  @extend .card;
+  background-color: #ffffff;
+  margin: 0;
+}
